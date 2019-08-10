@@ -1,6 +1,12 @@
 {
   "defaultSeverity": "error",
-  "extends": ["tslint:recommended"],
+  "extends": [
+    "tslint:recommended",
+    "@c_ogoo/tslint-config-og",
+    "tslint-immutable/all",
+    "tslint-clean-code",
+    "tslint-consistent-codestyle"
+  ],
   "jsRules": {
     "no-unused-expression": true
   },
@@ -12,7 +18,23 @@
     "member-ordering": [false],
     "interface-name": [false],
     "arrow-parens": false,
-    "object-literal-sort-keys": false
+
+    "object-literal-sort-keys": false,
+    "try-catch-first": true,
+    "newspaper-order": true,
+    "no-flag-args": true,
+    "no-for-each-push": true,
+    "no-feature-envy": true,
+    "no-map-without-usage": true,
+    "no-complex-conditionals": true,
+    "prefer-dry-conditionals": true,
+
+    "early-exit": true,
+    "no-collapsible-if": true,
+    "object-shorthand-properties-first": true,
+
+    "no-class": false,
+    "no-this": false
   },
   "rulesDirectory": []
 }
