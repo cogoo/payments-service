@@ -1,25 +1,21 @@
-// tslint:disable: prefer-function-over-method
 import { Injectable } from '@nestjs/common';
-import * as Stripe from 'stripe';
+import { StripeService } from '../core/stripe/stripe.service';
+import { Stripe } from '../core/stripe/stripe.iterface';
 
 @Injectable()
 export class PaymentIntentsService {
-  private readonly stripe = new Stripe(process.env.STRIPE_TEST);
+  constructor(private readonly stripeService: StripeService) {}
 
   async createPaymentsIntent(
     amount: number,
     paymentMethodID: string
-  ): Promise<Stripe.paymentIntents.IPaymentIntent> {
+  ): Promise<Stripe.PaymentIntents> {
     // tslint:disable-next-line: no-try
     try {
-      const paymentIntents = await this.stripe.paymentIntents.create({
+      const paymentIntents = await this.stripeService.createPaymentIntents(
         amount,
-        currency: 'gbp',
-        statement_descriptor: 'Custom descriptor',
-        payment_method: paymentMethodID,
-        confirmation_method: 'manual',
-        confirm: true,
-      });
+        paymentMethodID
+      );
 
       return paymentIntents;
     } catch (error) {
