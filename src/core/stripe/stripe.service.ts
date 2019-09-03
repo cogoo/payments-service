@@ -18,4 +18,21 @@ export class StripeService {
       confirm: true,
     });
   }
+
+  async createPaymentMethods(
+    cardNumber: string,
+    expMonth: number,
+    expYear: number,
+    cvc: string
+  ): Promise<Stripe.paymentMethods.IPaymentMethod> {
+    return this.stripe.paymentMethods.create({
+      type: 'card',
+      card: {
+        cvc,
+        number: cardNumber,
+        exp_month: expMonth,
+        exp_year: expYear,
+      },
+    });
+  }
 }

@@ -1,25 +1,22 @@
 import { Injectable } from '@nestjs/common';
 import { StripeService } from '../core/stripe/stripe.service';
 import { Stripe } from '../core/stripe/stripe.iterface';
+import { PaymentIntentsDto } from './payment-intents.dto';
 
 @Injectable()
 export class PaymentIntentsService {
   constructor(private readonly stripeService: StripeService) {}
 
   async createPaymentsIntent(
-    amount: number,
-    paymentMethodID: string
+    paymentsIntent: PaymentIntentsDto
   ): Promise<Stripe.PaymentIntents> {
-    // tslint:disable-next-line: no-try
-    try {
-      const paymentIntents = await this.stripeService.createPaymentIntents(
-        amount,
-        paymentMethodID
-      );
+    const { amount, paymentMethodID } = paymentsIntent;
 
-      return paymentIntents;
-    } catch (error) {
-      return error;
-    }
+    const paymentIntents = await this.stripeService.createPaymentIntents(
+      amount,
+      paymentMethodID
+    );
+
+    return paymentIntents;
   }
 }

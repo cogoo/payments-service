@@ -1,6 +1,7 @@
 import { Controller, Module, Post, Body } from '@nestjs/common';
 import { PaymentIntentsService } from './payment-intents.service';
 import { PaymentIntentsDto } from './payment-intents.dto';
+import { Stripe } from '../core/stripe/stripe.iterface';
 
 @Controller('payment_intents')
 export class PaymentIntentsController {
@@ -9,10 +10,9 @@ export class PaymentIntentsController {
   @Post()
   async createPaymentsIntent(
     @Body() paymentIntentDto: PaymentIntentsDto
-  ): Promise<boolean | {}> {
+  ): Promise<Stripe.PaymentIntents> {
     const paymentIntent = await this.paymentIntentsService.createPaymentsIntent(
-      paymentIntentDto.amount,
-      paymentIntentDto.paymentMethodID
+      paymentIntentDto
     );
 
     return paymentIntent;
