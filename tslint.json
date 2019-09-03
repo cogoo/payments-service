@@ -24,17 +24,18 @@
     "newspaper-order": true,
     "no-flag-args": true,
     "no-for-each-push": true,
-    "no-feature-envy": true,
     "no-map-without-usage": true,
     "no-complex-conditionals": true,
     "prefer-dry-conditionals": true,
+    "no-expression-statement": false,
 
     "early-exit": true,
     "no-collapsible-if": true,
     "object-shorthand-properties-first": true,
 
     "no-class": false,
-    "no-this": false
+    "no-this": false,
+    "no-if-statement": false
   },
   "rulesDirectory": []
 }
