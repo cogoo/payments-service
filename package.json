@@ -1,12 +1,13 @@
 {
-  "name": "nest-typescript-starter",
+  "name": "payments-service",
   "private": true,
   "version": "1.0.0",
-  "description": "Nest TypeScript starter repository",
+  "description": "Payments service written in NestJS",
   "license": "MIT",
   "scripts": {
     "build": "rimraf dist && tsc -p tsconfig.build.json",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "g:docs": "compodoc -p tsconfig.json -s --theme stripe -d docs",
     "start": "ts-node -r tsconfig-paths/register src/main.ts",
     "start:dev": "tsc-watch -p tsconfig.build.json --onSuccess \"node dist/main.js\"",
     "start:debug": "tsc-watch -p tsconfig.build.json --onSuccess \"node --inspect-brk dist/main.js\"",
@@ -32,6 +33,7 @@
   },
   "devDependencies": {
     "@c_ogoo/tslint-config-og": "0.0.1",
+    "@compodoc/compodoc": "^1.1.10",
     "@nestjs/testing": "6.1.1",
     "@types/dotenv": "^6.1.1",
     "@types/express": "4.16.1",
