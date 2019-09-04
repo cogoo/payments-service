@@ -44,4 +44,10 @@ export class StripeService {
   ): Promise<Stripe.paymentIntents.IPaymentIntent> {
     return this.stripe.paymentIntents.retrieve(id);
   }
+
+  async confirmPaymentIntents(
+    id: string
+  ): Promise<Stripe.paymentIntents.IPaymentIntent> {
+    return this.stripe.paymentIntents.confirm(id);
+  }
 }

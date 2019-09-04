@@ -12,17 +12,20 @@ export class PaymentIntentsController {
   async createPaymentIntents(
     @Body() paymentIntentDto: PaymentIntentsDto
   ): Promise<PaymentIntentResponse> {
-    const paymentIntent = await this.paymentIntentsService.createPaymentsIntent(
-      paymentIntentDto
-    );
+    return this.paymentIntentsService.createPaymentsIntent(paymentIntentDto);
+  }
 
-    return paymentIntent;
+  @Post(':id/confirm')
+  async confirmPaymentIntents(
+    @Param('id') paymentIntentID: string
+  ): Promise<PaymentIntentResponse> {
+    return this.paymentIntentsService.confirmPaymentsIntent(paymentIntentID);
   }
 
   @Get(':id')
   async retrievePaymentIntents(
     @Param('id') paymentIntentID: string
-  ): Promise<Stripe.PaymentIntents> {
+  ): Promise<PaymentIntentResponse> {
     return this.paymentIntentsService.retrievePaymentIntents(paymentIntentID);
   }
 }

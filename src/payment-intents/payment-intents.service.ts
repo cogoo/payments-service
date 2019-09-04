@@ -28,8 +28,16 @@ export class PaymentIntentsService {
     return generatePaymentResponse(paymentIntents);
   }
 
-  async retrievePaymentIntents(id: string): Promise<Stripe.PaymentIntents> {
-    return this.stripeService.retrievePaymentIntents(id);
+  async retrievePaymentIntents(id: string): Promise<PaymentIntentResponse> {
+    const paymentIntents = await this.stripeService.retrievePaymentIntents(id);
+
+    return generatePaymentResponse(paymentIntents);
+  }
+
+  async confirmPaymentsIntent(id: string): Promise<PaymentIntentResponse> {
+    const paymentIntents = await this.stripeService.confirmPaymentIntents(id);
+
+    return generatePaymentResponse(paymentIntents);
   }
 }
 
@@ -50,6 +58,16 @@ function generatePaymentResponse(
       payment_intent_id: intent.id,
       requires_action: true,
       next_action: intent.next_action,
+    };
+  }
+
+  if (intent.status === 'requires_confirmation') {
+    return {
+      payment_intent_id: intent.id,
+      requires_action: true,
+      next_action: {
+        type: 'requires_confirmation',
+      },
     };
   }
 
