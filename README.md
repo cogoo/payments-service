@@ -27,7 +27,7 @@ npm run start:dev
 
 ## Docs
 
-Docs and API docs for the service can be found in the [documentation](./documentation) folder. The docs are created by [CompoDoc](https://compodoc.app/)
+Docs and API docs for the service can be found in the [docs](./docs) folder or hosted on [here](https://loving-pike-f4473f.netlify.com/). The docs are created by [CompoDoc](https://compodoc.app/)
 
 ## License
 
