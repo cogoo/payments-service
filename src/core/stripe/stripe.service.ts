@@ -38,4 +38,10 @@ export class StripeService {
       },
     });
   }
+
+  async retrievePaymentIntents(
+    id: string
+  ): Promise<Stripe.paymentIntents.IPaymentIntent> {
+    return this.stripe.paymentIntents.retrieve(id);
+  }
 }

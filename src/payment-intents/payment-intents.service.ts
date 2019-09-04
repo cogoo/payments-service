@@ -40,12 +40,14 @@ function generatePaymentResponse(
   if (intent.status === 'requires_action') {
     if (intent.next_action.type === 'use_stripe_sdk') {
       return {
+        payment_intent_id: intent.id,
         requires_action: true,
         payment_intent_client_secret: intent.client_secret,
       };
     }
 
     return {
+      payment_intent_id: intent.id,
       requires_action: true,
       next_action: intent.next_action,
     };

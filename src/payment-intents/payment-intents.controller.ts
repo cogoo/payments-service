@@ -18,6 +18,13 @@ export class PaymentIntentsController {
 
     return paymentIntent;
   }
+
+  @Get(':id')
+  async retrievePaymentIntents(
+    @Param('id') paymentIntentID: string
+  ): Promise<Stripe.PaymentIntents> {
+    return this.paymentIntentsService.retrievePaymentIntents(paymentIntentID);
+  }
 }
 
 @Module({
