@@ -55,7 +55,7 @@
     "tslint-clean-code": "^0.2.9",
     "tslint-consistent-codestyle": "^1.15.1",
     "tslint-immutable": "^6.0.1",
-    "typescript": "3.4.3",
+    "typescript": "3.9.10",
     "typesync": "^0.5.2"
   },
   "jest": {
