@@ -24,7 +24,7 @@
     "@nestjs/common": "^6.5.3",
     "@nestjs/core": "^6.0.4",
     "@nestjs/microservices": "^6.0.4",
-    "@nestjs/platform-express": "^6.0.4",
+    "@nestjs/platform-express": "^7.0.0",
     "@nestjs/websockets": "^6.0.4",
     "dotenv": "^8.0.0",
     "reflect-metadata": "0.1.13",
