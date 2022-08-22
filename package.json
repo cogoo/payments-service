@@ -49,7 +49,7 @@
     "supertest": "4.0.2",
     "ts-jest": "24.0.2",
     "ts-node": "9.1.1",
-    "tsc-watch": "2.2.1",
+    "tsc-watch": "5.0.3",
     "tsconfig-paths": "3.8.0",
     "tslint": "5.20.1",
     "tslint-clean-code": "^0.2.9",
