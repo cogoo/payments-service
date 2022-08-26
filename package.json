@@ -42,7 +42,7 @@
     "@types/node": "18.7.13",
     "@types/prettier": "2.7.0",
     "@types/rimraf": "3.0.2",
-    "@types/stripe": "^6.31.14",
+    "@types/stripe": "^8.0.417",
     "@types/supertest": "2.0.11",
     "jest": "24.9.0",
     "prettier": "2.7.1",
