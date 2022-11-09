@@ -30,7 +30,7 @@
     "reflect-metadata": "0.1.13",
     "rimraf": "3.0.2",
     "rxjs": "6.6.7",
-    "stripe": "^10.5.0"
+    "stripe": "^10.17.0"
   },
   "devDependencies": {
     "@c_ogoo/tslint-config-og": "0.0.1",
