@@ -50,7 +50,7 @@
     "ts-jest": "24.3.0",
     "ts-node": "9.1.1",
     "tsc-watch": "5.0.3",
-    "tsconfig-paths": "4.1.0",
+    "tsconfig-paths": "4.1.1",
     "tslint": "5.20.1",
     "tslint-clean-code": "^0.2.10",
     "tslint-consistent-codestyle": "^1.16.0",
